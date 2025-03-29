@@ -1,0 +1,11 @@
+# Adjusted configuration to match the expected schema
+[project]
+  directory = "." # The root directory of the project
+  temp_directory = "tmp" # The temporary directory for temporary files
+
+[build]
+  binary_name = "main" # The name of the binary file
+  build_command = "go build -o {{.Output}} {{.Input}}" # The command to build the project
+  exclude_patterns = ["tmp/*", "client/*"] # Directories to exclude from monitoring
+  include_patterns = ["**/*.go"] # File patterns to include for monitoring
+  ignore_patterns = ["tmp/*"] # Files or directories to ignore when triggering a build
